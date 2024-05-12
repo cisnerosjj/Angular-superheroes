@@ -15,7 +15,8 @@
             <mat-form-field class="col-12 sm:col-6">
               <mat-label>Super héroe</mat-label>
               <input
-              matInput
+              matInput 
+              (input)="onInputChange($event)"
               type="text"
               required
               formControlName="superhero"
