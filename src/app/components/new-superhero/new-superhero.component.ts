@@ -69,4 +69,19 @@ export class NewSuperheroComponent {
         this.router.navigate(['/superheroes', superhero.id]);
       });
   }
+
+  textoInput: string = '';
+
+  onInputChange(event: any) {
+    function capitalizeFirstLetter(input: string): string {
+      if (!input) return input; // Verifica si el input es null, undefined o vacío
+
+      return input.charAt(0).toUpperCase() + input.slice(1);
+    }
+    // Llama a la función para capitalizar el texto del input
+    this.textoInput = capitalizeFirstLetter(event.target.value);
+    this.superheroForm.patchValue({
+      superhero: this.textoInput,
+    });
+  }
 }
