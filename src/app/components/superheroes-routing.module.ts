@@ -3,18 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SearchSuperheroesComponent } from './search-superheroes/search-superheroes.component';
 import { LayoutPageComponent } from './layout-page/layout-page.component';
+import { NewSuperheroComponent } from './new-superhero/new-superhero.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutPageComponent,
     children: [
-      // {path: 'new-hero', component: NewPageComponent},
+      { path: 'new-hero', component: NewSuperheroComponent },
       { path: 'search', component: SearchSuperheroesComponent },
+      { path: 'edit/:id', component: NewSuperheroComponent },
 
-      // {path: 'edti/:id', component: NewPageComponent},
-      // {path: ':id', component: HeroPageComponent},
       { path: '**', redirectTo: 'search' },
+      // { path: ':id', component: HeroPageComponent },
     ],
   },
 ];
