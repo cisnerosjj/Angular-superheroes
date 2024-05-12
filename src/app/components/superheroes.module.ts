@@ -9,6 +9,7 @@ import { SuperheroesRoutingModule } from './superheroes-routing.module';
 import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewSuperheroComponent } from './new-superhero/new-superhero.component';
+import { ListSuperheroesComponent } from './list-superheroes/list-superheroes.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NewSuperheroComponent } from './new-superhero/new-superhero.component';
     CardComponent,
     NewSuperheroComponent,
     SuperheroComponent,
+    ListSuperheroesComponent,
   ],
   imports: [
     CommonModule,

@@ -22,13 +22,13 @@ export class SuperheroComponent implements OnInit {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.superheroService.getSuperheroById(id)))
       .subscribe((superhero) => {
-        if (!superhero) return this.router.navigate(['/superheroes/search']);
+        if (!superhero) return this.router.navigate(['/superheroes/list']);
         this.superhero = superhero;
         return;
       });
   }
 
   public goBack(): void {
-    this.router.navigateByUrl('superheroes/search');
+    this.router.navigateByUrl('superheroes/list');
   }
 }
