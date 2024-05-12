@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeroService } from 'src/app/services/superhero.service';
+import { SuperheroService } from 'src/app/services/superhero.service';
 import { Superhero } from 'src/superhero.model';
 
 @Component({
@@ -10,12 +10,12 @@ import { Superhero } from 'src/superhero.model';
 export class SearchSuperheroesComponent {
   public superheroes: Superhero[] = [];
 
-  constructor(private superheroService: HeroService) {}
+  constructor(private superheroService: SuperheroService) {}
 
   ngOnInit(): void {
-    //   this.superheroService
-    //     .getHeros()
-    //     .subscribe((superheroes) => (this.superheroes = superheroes));
+    this.superheroService
+      .getSuperheroes()
+      .subscribe((superheroes) => (this.superheroes = superheroes));
     console.log('llego');
   }
 }
