@@ -42,7 +42,7 @@ export class NewSuperheroComponent {
     if (!this.router.url.includes('edit')) return;
 
     this.activatedRoute.params
-      .pipe(switchMap(({ id }) => this.superheroService.getHeroById(id)))
+      .pipe(switchMap(({ id }) => this.superheroService.getSuperheroById(id)))
       .subscribe((hero) => {
         if (!hero) return this.router.navigateByUrl('/');
 
@@ -58,7 +58,7 @@ export class NewSuperheroComponent {
       this.superheroService
         .updateSuperhero(this.currentHero)
         .subscribe((superhero) => {
-          this.router.navigate(['/heroes', superhero.id]);
+          this.router.navigate(['/superheroes', superhero.id]);
         });
       return;
     }
@@ -66,7 +66,7 @@ export class NewSuperheroComponent {
     this.superheroService
       .addSuperhero(this.currentHero)
       .subscribe((superhero) => {
-        this.router.navigate(['/heroes', superhero.id]);
+        this.router.navigate(['/superheroes', superhero.id]);
       });
   }
 }

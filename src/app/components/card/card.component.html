@@ -24,9 +24,9 @@
     <mat-card-actions>
       <button
         mat-button
-        mat-raiz
-        color="primary"
-        [routerLink]="['/superhero/edit', superhero.id]">
+        mat-raiz  
+        color="red"
+        [routerLink]="['/superheroes/edit', superhero.id]">
         <mat-icon>edit</mat-icon>
         Editar
       </button>
@@ -36,7 +36,7 @@
       <button
         mat-button
         mat-raiz
-        [routerLink]="['/superhero', superhero.id]">
+        [routerLink]="['/superheroes', superhero.id]">
         <mat-icon>more_horiz</mat-icon>
         Más
       </button>

@@ -1,1 +1,63 @@
-<p>superhero works!</p>
+<ng-template #divLoading>
+    <mat-grid-list rowHeight="400" cols="1">
+      <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-template>
+  
+  
+  <div *ngIf="superhero; else divLoading" class="card-grid mt-4">
+  
+    <header class="card-header text-center">
+      <h1>{{ superhero.superhero }}</h1>
+      <h3>{{ superhero.alter_ego }}</h3>
+    </header>
+  
+    <mat-divider></mat-divider>
+  
+    <main class="card-main">
+  
+      <section class="section-info">
+        <h4 class="text-center">INFORMACIÓN</h4>
+        <mat-divider></mat-divider>
+        <div class="section-info__content">
+  
+          <div class="content-c">
+            <h5>PERSONAJES</h5>
+            <div class="content-c__container">
+              <span class="sp-ch" *ngFor="let name of superhero.characters.split(',') | slice:0:3">
+                {{ name }}
+              </span>
+            </div>
+          </div>
+  
+          <div class="content-f">
+            <h5>PRIMERA APARICIÓN</h5>
+            <span class="sp-ch">
+              {{ superhero.first_appearance }}
+            </span>
+          </div>
+  
+          <div class="content-cr">
+            <h5>CREADOR</h5>
+            <span class="sp-ch">
+              {{ superhero.publisher }}
+            </span>
+          </div>
+  
+        </div>
+      </section>
+  
+      <section class="section-img">
+        <!-- <img [src]="superhero | heroImage"> -->
+      </section>
+  
+    </main>
+  
+    <footer class="card-footer text-center">
+      <button (click)="goBack()" mat-button color="primary"> REGRESAR </button>
+    </footer>
+  
+  </div>
+  
