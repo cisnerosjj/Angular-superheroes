@@ -18,6 +18,12 @@ export class SuperheroService {
   getSuperheroes(): Observable<Superhero[]> {
     return this.http.get<Superhero[]>(`${this.baseUrl}/heroes`);
   }
+
+  getHeroById(id: string): Observable<Superhero | undefined> {
+    return this.http
+      .get<Superhero>(`${this.baseUrl}/heroes/${id}`)
+      .pipe(catchError((error) => of(undefined)));
+  }
   getSuggestions(query: string): Observable<Superhero[]> {
     return this.http.get<Superhero[]>(
       `${this.baseUrl}/heroes?q=${query}&_limit=6`
