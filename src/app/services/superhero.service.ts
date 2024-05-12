@@ -9,13 +9,13 @@ const environments = {
 @Injectable({
   providedIn: 'root',
 })
-export class HeroService {
+export class SuperheroService {
   private baseUrl: string = environments.baseUrl;
 
   constructor(private http: HttpClient) {}
 
   // READ - GET
-  getHeros(): Observable<Superhero[]> {
-    return this.http.get<Superhero[]>(`${this.baseUrl}/superheroes`);
+  getSuperheroes(): Observable<Superhero[]> {
+    return this.http.get<Superhero[]>(`${this.baseUrl}/heroes`);
   }
 }
