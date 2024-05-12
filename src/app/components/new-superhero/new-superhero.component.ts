@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./new-superhero.component.css'],
 })
 export class NewSuperheroComponent {
-  public heroForm = new FormGroup({
+  public superheroForm = new FormGroup({
     id: new FormControl<string>(''),
     superhero: new FormControl<string>('', { nonNullable: true }),
     alter_ego: new FormControl<string>('', { nonNullable: true }),
@@ -33,7 +33,7 @@ export class NewSuperheroComponent {
   ) {}
 
   get currentHero(): Superhero {
-    const hero = this.heroForm.value as Superhero;
+    const hero = this.superheroForm.value as Superhero;
 
     return hero;
   }
@@ -46,20 +46,27 @@ export class NewSuperheroComponent {
       .subscribe((hero) => {
         if (!hero) return this.router.navigateByUrl('/');
 
-        this.heroForm.reset(hero);
+        this.superheroForm.reset(hero);
         return;
       });
   }
 
   onSubmit(): void {
-    if (this.heroForm.invalid) return;
+    if (this.superheroForm.invalid) return;
 
-    // if (this.currentHero.id) {
-    //   this.superheroService.updateHero(this.currentHero).subscribe((hero) => {
-    //     this.router.navigate(['/heroes', hero.id]);
-    //     this.showSnackBar(`${hero.superhero} updated!`);
-    //   });
-    //   return;
-    // }
+    if (this.currentHero.id) {
+      this.superheroService
+        .updateSuperhero(this.currentHero)
+        .subscribe((superhero) => {
+          this.router.navigate(['/heroes', superhero.id]);
+        });
+      return;
+    }
+
+    this.superheroService
+      .addSuperhero(this.currentHero)
+      .subscribe((superhero) => {
+        this.router.navigate(['/heroes', superhero.id]);
+      });
   }
 }
