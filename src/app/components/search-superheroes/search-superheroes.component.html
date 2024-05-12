@@ -17,7 +17,7 @@
       (optionSelected)="onSelectedOption( $event )">
         <mat-option *ngFor="let hero of superheroes"
           [value]="hero"
-          [routerLink]="['/heroes', hero.id]" >
+          [routerLink]="['/superheroes', hero.id]" >
           {{hero.superhero}}
         </mat-option>
         <mat-option

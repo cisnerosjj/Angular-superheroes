@@ -19,7 +19,7 @@ export class SuperheroService {
     return this.http.get<Superhero[]>(`${this.baseUrl}/heroes`);
   }
 
-  getHeroById(id: string): Observable<Superhero | undefined> {
+  getSuperheroById(id: string): Observable<Superhero | undefined> {
     return this.http
       .get<Superhero>(`${this.baseUrl}/heroes/${id}`)
       .pipe(catchError((error) => of(undefined)));

@@ -1,3 +1,4 @@
+import { SuperheroComponent } from './superhero/superhero.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,9 +14,8 @@ const routes: Routes = [
       { path: 'new-hero', component: NewSuperheroComponent },
       { path: 'search', component: SearchSuperheroesComponent },
       { path: 'edit/:id', component: NewSuperheroComponent },
-
+      { path: ':id', component: SuperheroComponent },
       { path: '**', redirectTo: 'search' },
-      // { path: ':id', component: HeroPageComponent },
     ],
   },
 ];

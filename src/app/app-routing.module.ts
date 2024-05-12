@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'heroes',
+    path: 'superheroes',
     loadChildren: () =>
       import('./components/superheroes.module').then(
         (m) => m.SuperheroesModule
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'heroes',
+    redirectTo: 'superheroes',
     pathMatch: 'full',
   },
 ];
