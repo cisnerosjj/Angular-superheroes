@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
 ## Testing: Cypress
-![alt text](https://github.com/cisnerosjj/Angular-superheroes.git/blob/master/src/assets/readme/Captura%20de%20pantalla%202024-05-14%20224626.png)
+![alt text](https://github.com/cisnerosjj/Angular-superheroes/blob/master/src/assets/readme/Captura%20de%20pantalla%202024-05-14%20224626.png)
 
 ## How To Use
 
