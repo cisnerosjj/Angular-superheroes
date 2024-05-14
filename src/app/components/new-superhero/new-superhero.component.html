@@ -78,7 +78,7 @@
   
           <div class="flex justify-content-around">
             <button
-              *ngIf="currentHero.id"
+              *ngIf="currentSuperhero.id"
               mat-flat-button
               color="warn">
               Borrar
@@ -98,7 +98,7 @@
   
     <div class="col-12 sm:col-6">
       <mat-card>
-        <!-- <img [src]="currentHero | heroImage" alt="imagen del héroe" mat-card-image> -->
+        <img [src]="currentSuperhero | superheroImage" alt="imagen del héroe" mat-card-image>
       </mat-card>
     </div>
   
