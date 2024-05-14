@@ -10,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewSuperheroComponent } from './new-superhero/new-superhero.component';
 import { ListSuperheroesComponent } from './list-superheroes/list-superheroes.component';
+import { superheroImagePipe } from '../pipes/superhero_img.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ListSuperheroesComponent } from './list-superheroes/list-superheroes.co
     NewSuperheroComponent,
     SuperheroComponent,
     ListSuperheroesComponent,
+    superheroImagePipe,
   ],
   imports: [
     CommonModule,
